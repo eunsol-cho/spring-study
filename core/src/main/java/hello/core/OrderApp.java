@@ -20,8 +20,8 @@ public class OrderApp {
         Member member = new Member(memberId, "memberA", Grade.VIP);
         memberService.join(member);
 
-        Order order = orderService.createOrder(memberId, "itemA", 10000);
-
+        Order order = orderService.createOrder(memberId, "itemA", 20000);
+        // control + r : 기존에 마지막 실행됫던걸로 실행
         System.out.println("order = " + order);
     }
 }
