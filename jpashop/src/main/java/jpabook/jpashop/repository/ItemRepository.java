@@ -18,6 +18,8 @@ public class ItemRepository {
             em.persist(item); // 신규로 등록
         } else {
             em.merge(item); // db에 등록된것을 가져온건 (update와 유사)
+            // 단순하게는 updateItem 과 같은 로직이라고 할 수 있다.
+            // Item객체(준영속상태)의 식별자에 해당(1차캐시->DB)하는 객체의 각 필드들을 엎어준다.
         }
     }
 
