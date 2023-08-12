@@ -1,8 +1,10 @@
 # Describe Repository
-##### #1. 스프링 핵심 원리 - 기본편 (Jan 28, 2021 ~ Feb 6, 2021)
-##### source : https://github.com/eunsolJo/spring-study/tree/master/core
-##### notion : https://www.notion.so/01968ec65e6e41788eadbe4714c9dc0a
+### [🔗](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%95%B5%EC%8B%AC-%EC%9B%90%EB%A6%AC-%EA%B8%B0%EB%B3%B8%ED%8E%B8) 스프링 핵심 원리 - 기본편 
+#### Jan 28, 2021 ~ Feb 6, 2021
+[💻 Source code](https://github.com/eunsolJo/spring-study/tree/master/core) <br>
+[✏️ Summary](https://www.notion.so/01968ec65e6e41788eadbe4714c9dc0a)
 
-##### #2. 실전! 스프링 부트와 JPA 활용1 - 웹 애플리케이션 개발 (Feb 17, 2021 ~ )
-##### source : https://github.com/eunsolJo/spring-study/tree/master/jpashop
-##### notion : https://www.notion.so/JPA-1-f6eba1578e8b45d884b14b65554076d9
+### [🔗](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard) 스프링 부트 개념과 활용
+#### Agu 9, 2023 ~ 
+[💻 Source code](https://github.com/eunsolJo/spring-study/tree/main/concept-of-spring-boot) <br>
+[✏️ Summary](https://www.notion.so/706a63fcd1874b9fb57a241051d06d04?pvs=4)

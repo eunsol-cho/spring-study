@@ -1,37 +1,36 @@
-HELP.md
-.gradle
-build/
-!gradle/wrapper/gradle-wrapper.jar
-!**/src/main/**/build/
-!**/src/test/**/build/
+### Java template
+*.class
 
-### STS ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-bin/
-!**/src/main/**/bin/
-!**/src/test/**/bin/
+# Package Files #
+*.jar
+*.war
+*.ear
 
-### IntelliJ IDEA ###
+### macOS template
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# IntelliJ project files
 .idea
-*.iws
+.idea/*.xml
 *.iml
-*.ipr
-out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+out
+gen
+build
+rebel.xml
 
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
+# Compliled files
+/target/
+**/target
 
-### VS Code ###
-.vscode/
+/example/
+
+# Gradle
+.gradle
+/build/
+.gradletasknamecache
+
+# gradlew
+gradlew
+gradlew.bat
