@@ -6,5 +6,5 @@
 
 ### [🔗](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard) 스프링 부트 개념과 활용
 #### Agu 9, 2023 ~ 
-[💻 Source code](https://github.com/eunsolJo/spring-study/tree/main/concept-of-spring-boot) <br>
+[💻 Source code](https://github.com/eunsolJo/spring-study/tree/master/concept-of-spring-boot) <br>
 [✏️ Summary](https://www.notion.so/706a63fcd1874b9fb57a241051d06d04?pvs=4)
