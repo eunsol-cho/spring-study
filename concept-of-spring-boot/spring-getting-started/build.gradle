@@ -17,7 +17,13 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation('org.springframework.boot:spring-boot-starter-web') {
+        // 내장 톰켓 지우기
+        //exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+    }
+    // jetty 추가
+    //implementation 'org.springframework.boot:spring-boot-starter-jetty'
+
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     implementation 'com.practice:custom-spring-boot-starter:1.0-SNAPSHOT'
 }

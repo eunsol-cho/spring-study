@@ -1,6 +1,11 @@
 package com.practice;
 
-public class Holoman {
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ConfigurationProperties("holoman")
+public class HolomanProperties {
 
 	String name;
 	int howLong;
@@ -21,11 +26,4 @@ public class Holoman {
 		this.howLong = howLong;
 	}
 
-	@Override
-	public String toString() {
-		return "Holoman{" +
-			   "name='" + name + '\'' +
-			   ", howLong=" + howLong +
-			   '}';
-	}
 }
