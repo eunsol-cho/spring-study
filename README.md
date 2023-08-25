@@ -4,6 +4,8 @@
 [💻 Source code](https://github.com/eunsolJo/spring-study/tree/master/core) <br>
 [✏️ Summary](https://www.notion.so/01968ec65e6e41788eadbe4714c9dc0a)
 
+---
+
 ### [🔗](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8/dashboard) 스프링 부트 개념과 활용
 #### Agu 9, 2023 ~ 
 💻 Source code <br>
