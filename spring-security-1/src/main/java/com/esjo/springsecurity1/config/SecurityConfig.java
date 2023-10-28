@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 권한이 없을때, 403페이지가 아닌 아래 설정 경로로 이동
                 .and()
                 .formLogin()
-                .loginPage("/loginForm")
+                .loginPage("/login") // endpoint 입력 해줘야함
                 // 해당 주소가 호출이 되면, 시큐리티가 낚아채서 대신 로그인을 진행 => 컨트롤러에 login 진입점 안만들어도됨
                 .loginProcessingUrl("/login")
                 //.usernameParameter() -> username 파라미터명 변경 옵션, 그냥 그대로 쓰는거 ㅊㅊ
