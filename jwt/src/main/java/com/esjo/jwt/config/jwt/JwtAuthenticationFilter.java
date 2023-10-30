@@ -90,10 +90,11 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
         String jwtToken = JWT.create()
                 .withSubject(principalDetailis.getUsername())
-                .withExpiresAt(new Date(System.currentTimeMillis()+JwtProperties.EXPIRATION_TIME))
+                .withExpiresAt(new Date(System.currentTimeMillis()+JwtProperties.EXPIRATION_TIME)) // 만료시간
+                // 아무런 key-value 담아줘도 됨
                 .withClaim("id", principalDetailis.getUser().getId())
                 .withClaim("username", principalDetailis.getUser().getUsername())
-                .sign(Algorithm.HMAC512(JwtProperties.SECRET));
+                .sign(Algorithm.HMAC512(JwtProperties.SECRET)); // RSA 방식이 아니고, Hash 암호 방식 : HMAC512
 
         response.addHeader(JwtProperties.HEADER_STRING, JwtProperties.TOKEN_PREFIX+jwtToken);
     }

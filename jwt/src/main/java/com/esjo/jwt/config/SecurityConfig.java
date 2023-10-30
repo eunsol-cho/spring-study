@@ -1,7 +1,7 @@
 package com.esjo.jwt.config;
 
 import com.esjo.jwt.config.jwt.JwtAuthenticationFilter;
-import com.esjo.jwt.filter.MyFilter3;
+import com.esjo.jwt.config.jwt.JwtAuthorizationFilter;
 import com.esjo.jwt.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
@@ -9,7 +9,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.web.context.SecurityContextPersistenceFilter;
 
 @Configuration
 @EnableWebSecurity // 시큐리티 활성화 -> 기본 스프링 필터체인에 등록
@@ -25,7 +24,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //.addFilter(new MyFilter1()) // 시큐리티 필터만 등록 가능해, addFilterAfter/Before 로는 걸 수 있다.
                 //.addFilterBefore(new MyFilter1(), BasicAuthenticationFilter.class) // 이렇게 넣을수 있는데, 그럼 시큐리티 필터 순서를 알아야한다.
                 // 하지만 위의 방식처럼 굳이 시큐리티 필터에 필터를 넣을 필요는 없다. (FilterConfig.java 파일 참조)
-                .addFilterBefore(new MyFilter3(), SecurityContextPersistenceFilter.class) // 가장먼저 실행됨
+                //.addFilterBefore(new MyFilter3(), SecurityContextPersistenceFilter.class) // 가장먼저 실행됨
 
                 .addFilter(corsConfig.corsFilter()) // CorsFilter 필터 추가 - cors이 모두 허용
                 // (컨트롤러에 @CrossOrigin 이거 다는건, 인증 없는 것만 처리. 이 방식이 인증 있는것도 처리해주는 방법)
@@ -44,8 +43,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
                 // /login 경로 설정
                 .addFilter(new JwtAuthenticationFilter(authenticationManager())) // AuthenticationManager <- WebSecurityConfigurerAdapter가 가지고 있다.
-                //.addFilter(new JwtAuthorizationFilter(authenticationManager(), userRepository))
+                .addFilter(new JwtAuthorizationFilter(authenticationManager(), userRepository))
 
+                // 권한이 필요한 주소
                 .authorizeRequests()
                 .antMatchers("/api/v1/user/**")// 해당주소로 들어오면, 아래와 같은 롤체크를 한다.
                 .access("hasRole('ROLE_USER') or hasRole('ROLE_MANAGER') or hasRole('ROLE_ADMIN')")
