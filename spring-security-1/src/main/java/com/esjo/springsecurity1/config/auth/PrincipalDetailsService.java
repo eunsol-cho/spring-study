@@ -17,7 +17,7 @@ public class PrincipalDetailsService implements UserDetailsService {
     private UserRepository userRepository;
 
     // String username -> 해당 네이밍도 규칙임
-    // 시쿠리티 세션 (내부 Authentication (내부 UserDetails))
+    // 시큐리티 세션 (내부 Authentication (내부 UserDetails))
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Users user = userRepository.findByUsername(username);

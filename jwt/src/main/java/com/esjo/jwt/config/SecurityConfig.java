@@ -42,7 +42,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 // 여기까지는 고정 옵션 - jwt를 사용하기 위한 고정 옵션
 
                 // /login 경로 설정
+                // 인증 - 로그인
                 .addFilter(new JwtAuthenticationFilter(authenticationManager())) // AuthenticationManager <- WebSecurityConfigurerAdapter가 가지고 있다.
+                // 인가 - 권한확인
                 .addFilter(new JwtAuthorizationFilter(authenticationManager(), userRepository))
 
                 // 권한이 필요한 주소
