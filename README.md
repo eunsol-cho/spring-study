@@ -30,6 +30,6 @@
 <br>
 
 ### [🔗 실전! 스프링부트 상품-주문 API 개발로 알아보는 TDD](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81%EB%B6%80%ED%8A%B8-%EC%8B%A4%EC%A0%84-%EC%83%81%ED%92%88%EC%A3%BC%EB%AC%B8-tdd/dashboard)
-#### Nov 04, 2023 ~
+#### Nov 04, 2023 ~ Nov 08, 2023
 💻 [Source code](https://github.com/eunsolJo/spring-study/tree/master/tdd-demo) <br>
 ✏️ [Summary](https://golden-age-825.notion.site/TDD-cca485228f2b478cab3755d712d3c472?pvs=4)

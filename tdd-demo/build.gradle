@@ -37,6 +37,12 @@ dependencies {
 	// test
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+	// rest-assured
+	testImplementation 'io.rest-assured:rest-assured:4.4.0'
+
+	// guava
+	implementation 'com.google.guava:guava:31.0.1-jre'
+
 }
 
 tasks.named('test') {

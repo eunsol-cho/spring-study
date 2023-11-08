@@ -1,10 +1,16 @@
 package com.esjo.tdddemo.product;
 
-import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
+import com.esjo.tdddemo.product.application.service.AddProductRequest;
+import com.esjo.tdddemo.product.application.service.GetProductResponse;
+import com.esjo.tdddemo.product.application.service.ProductService;
+import com.esjo.tdddemo.product.application.service.UpdateProductRequest;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.http.ResponseEntity;
+
+import static com.esjo.tdddemo.product.ProductSteps.상품등록요청_생성;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest
 class ProductServiceTest {
@@ -14,16 +20,24 @@ class ProductServiceTest {
 
     @Test
     void 상품등록() {
-        final AddProductRequest request = 상품등록요청_생성();
+        final AddProductRequest request = 상품등록요청_생성( );
         productService.addProduct(request);
     }
 
-    private static AddProductRequest 상품등록요청_생성() {
-        final String name = "상품명";
-        final int price = 1000;
-        final DiscountPolicy discountPolicy = DiscountPolicy.NONE;
-        final AddProductRequest request = new AddProductRequest(name, price, discountPolicy);
-        return request;
+    @Test
+    void 상품수정() {
+        productService.addProduct(ProductSteps.상품등록요청_생성());
+        final Long productId = 1L;
+        final UpdateProductRequest request = ProductSteps.상품수정요청_생성();
+
+        productService.updateProduct(productId, request);
+
+        final ResponseEntity<GetProductResponse> response = productService.getProduct(productId);
+        final GetProductResponse productResponse = response.getBody();
+        assertThat(productResponse.name()).isEqualTo("상품 수정");
+        assertThat(productResponse.price()).isEqualTo(2000);
+
     }
+
 
 }
