@@ -27,19 +27,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //.addFilterBefore(new MyFilter3(), SecurityContextPersistenceFilter.class) // 가장먼저 실행됨
 
                 .addFilter(corsConfig.corsFilter()) // CorsFilter 필터 추가 - cors이 모두 허용
-                // (컨트롤러에 @CrossOrigin 이거 다는건, 인증 없는 것만 처리. 이 방식이 인증 있는것도 처리해주는 방법)
+                // @CrossOrigin : 컨트롤러나 메서드에 직접 허용하는 방식. 단, 시큐리티 필터전에 동작. 인증이 필요한 경우 정상적이 처리 불가. 인증이 필요하지 않는 경우에만 사용 적합
                 .csrf().disable() // csrf
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS) // 세션을 사용하지 않고, stateless서버로 사용
                 .and()
                 .formLogin().disable() // jwt 사용하니까 form 로그인 안함 (form태그 만들어서 로그인하는거 안한다)
                 .httpBasic().disable() // 기본적인 로그인 방식안씀
-                // 요청에 따른 세션을 서버에서 만들어서 리턴 하는 방식
-                // 문제점1. 서버가 여러대인 경우 요청처리
-                // 문제점2. 쿠키는 동일 도메인에서의 요청만 처리 가능 (서버의 도메인과 같아야한다. js상에 쿠키를 어거지로 담아 보낼 수 있지만, 서버측에서 httpOnly로 해서 막는다)
                 // header authorization에 ID/PW담아 - "http basic 방식" => 암호화 안됨 -> https로 암호화
                 // header authorization에 토큰담아 - 노출이 되더라도 위험부담이 적다. - "http bearer 방식"
                 // 이때, 토큰을 JWT방식으로 담는거임.
                 // 여기까지는 고정 옵션 - jwt를 사용하기 위한 고정 옵션
+
+                // 요청에 따른 세션을 서버에서 만들어서 리턴 하는 방식
+                // 문제점1. 서버가 여러대인 경우 요청처리
+                // 문제점2. 쿠키는 동일 도메인에서의 요청만 처리 가능 (서버의 도메인과 같아야한다. js상에 쿠키를 어거지로 담아 보낼 수 있지만, 서버측에서 httpOnly로 해서 막는다)
 
                 // /login 경로 설정
                 // 인증 - 로그인

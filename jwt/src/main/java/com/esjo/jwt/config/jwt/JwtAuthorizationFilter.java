@@ -21,7 +21,7 @@ import java.io.IOException;
 // 시큐리티의 필터중 BasicAuthenticationFilter
 // 권한이나 인증이 필요한 특정 주소를 요청 했을때 위 필터를 무조건탐
 // 원한 인증이 필요하지 않다면, 위 필터를 타지 않음
-public class JwtAuthorizationFilter extends BasicAuthenticationFilter{
+public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
 
     private UserRepository userRepository;
 

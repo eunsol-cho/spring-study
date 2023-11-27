@@ -23,7 +23,7 @@
 #### Oct 16, 2023 ~ Oct 30, 2023
 💻 Source code <br>
 - [Section0. 스프링 시큐리티 기본](https://github.com/eunsolJo/spring-study/tree/master/spring-security-1)
-- [Section3. 스트링 시큐리티 JWT 서버구축](https://github.com/eunsolJo/spring-study/tree/master/jwt)
+- [Section3. 스프링 시큐리티 JWT 서버구축](https://github.com/eunsolJo/spring-study/tree/master/jwt)
 
 ✏️ [Summary](https://golden-age-825.notion.site/JWT-921ca43839104087868006c6ff288036?pvs=4)
 
@@ -33,3 +33,12 @@
 #### Nov 04, 2023 ~ Nov 08, 2023
 💻 [Source code](https://github.com/eunsolJo/spring-study/tree/master/tdd-demo) <br>
 ✏️ [Summary](https://golden-age-825.notion.site/TDD-cca485228f2b478cab3755d712d3c472?pvs=4)
+
+
+<br>
+
+### [🔗 스프링 시큐리티 - Spring Boot 기반으로 개발하는 Spring Security](https://www.inflearn.com/course/%EC%BD%94%EC%96%B4-%EC%8A%A4%ED%94%84%EB%A7%81-%EC%8B%9C%ED%81%90%EB%A6%AC%ED%8B%B0/dashboard) 
+#### Nov 11, 2023 ~ 
+💻 [Source code](https://github.com/eunsolJo/spring-study/tree/master/basicsecurity) <br>
+
+✏️ [Summary](https://golden-age-825.notion.site/Spring-Boot-Spring-Security-5c011cb577f74c729cd4a31caadcdbed?pvs=4)
