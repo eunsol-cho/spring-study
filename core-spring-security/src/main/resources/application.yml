@@ -1,0 +1,25 @@
+# datasource
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/security
+    username: esjo
+    password: esjo1216
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+# thymeleaf
+  thymeleaf:
+    cache: false
+
+# devtools
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+
+# bean
+  main:
+    allow-bean-definition-overriding: true
